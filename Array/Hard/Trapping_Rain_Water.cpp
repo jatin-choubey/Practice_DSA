@@ -8,7 +8,7 @@
 //       0  1  2  3  4  5  6  7  8  9  10  11
 // The water will get logged at indexs 2, 4, 5, 6, 9
 
-// Approach 1 : Brute Force : SC = O(n^2)
+// Approach 1 : Brute Force : TC = O(n^2)
 class Solution
 {
 public:
