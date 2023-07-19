@@ -1,4 +1,5 @@
 // Write a program to add two numbers as Linked lists from left to right
+
 /*
     L1 :  1 - 5 - 4
     L2 :  4 - 8 - 7 - 9
@@ -9,15 +10,21 @@
 
 ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
 {
-    ListNode *head = nullptr; // Head pointer of the resulting linked list
-    int carry = 0;            // Carry value for addition
+    // Create a dummy node to start building the result linked list.
+    ListNode *dummy = new ListNode(-1);
+    // Create a pointer 'temp' to traverse the new linked list.
+    ListNode *temp = dummy;
+    // Initialize 'carry' to handle any carryover from addition.
+    int carry = 0;
 
-    // Continue the loop until there are nodes in either list or there is a carry value
+    // Continue the loop until both input linked lists 'l1' and 'l2' are empty,
+    // and there's no carry left to handle.
     while (l1 != nullptr || l2 != nullptr || carry != 0)
     {
-        int sum = 0; // Variable to store the sum of current digits
+        // Initialize 'sum' to hold the sum of digits at the current position.
+        int sum = 0;
 
-        // Add the values of the corresponding nodes in list l1 and l2 (if they exist)
+        // Add the values of 'l1' and 'l2' if they are not nullptr.
         if (l1 != nullptr)
         {
             sum += l1->val;
@@ -29,31 +36,20 @@ ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
             l2 = l2->next;
         }
 
-        sum += carry;       // Add the carry value to the sum
-        carry = sum / 10;   // Update the carry value for the next addition
-        int add = sum % 10; // Compute the value to be added to the new linked list
+        // Add any carry value from the previous iteration to 'sum'.
+        sum += carry;
 
-        ListNode *neww = new ListNode(add); // Create a new node for the sum digit
+        // Calculate the new carry value for the next iteration.
+        carry = sum / 10;
 
-        if (head == nullptr)
-        {
-            head = neww; // If head is NULL, assign the new node as the head
-        }
-        else
-        {
-            ListNode *temp = head;
+        // Create a new node to hold the current digit and attach it to the result linked list.
+        ListNode *newNode = new ListNode(sum % 10);
+        temp->next = newNode;
 
-            // Find the last node in the linked list
-            while (temp->next != nullptr)
-            {
-                temp = temp->next;
-            }
-
-            temp->next = neww; // Append the new node to the last node
-        }
-
-        neww->next = nullptr; // Set the next pointer of the new node to NULL
+        // Move 'temp' to the next position in the result linked list.
+        temp = temp->next;
     }
 
-    return head; // Return the head pointer of the resulting linked list
+    // Return the head of the result linked list, skipping the dummy node.
+    return dummy->next;
 }
