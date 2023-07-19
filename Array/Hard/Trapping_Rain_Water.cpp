@@ -101,3 +101,61 @@ public:
         return water;
     }
 };
+
+// Approach 3 : Optimal Solution (Two Pointers)
+
+// Function to calculate the trapped rainwater in an array of heights
+int getTrappedWater(int *arr, int n)
+{
+    // Initialize two pointers for the left and right ends of the array
+    int l = 0;     // Pointer for the left end of the array
+    int r = n - 1; // Pointer for the right end of the array
+
+    // Initialize variables to store the maximum height encountered from the left and right
+    int lmax = 0; // Maximum height from the left side
+    int rmax = 0; // Maximum height from the right side
+
+    int water = 0; // Variable to store the total trapped water
+
+    // Loop until the two pointers meet or cross each other
+    while (l <= r)
+    {
+        // If the height at the left pointer is less than or equal to the height at the right pointer
+        if (arr[l] <= arr[r])
+        {
+            // Check if the height at the left pointer is greater than the left maximum height
+            if (arr[l] > lmax)
+                lmax = arr[l]; // Update the left maximum height
+
+            // Calculate the trapped water at the current position and add it to the total
+            // The trapped water is the difference between the left maximum height and the height at the current position
+            // If the height at the current position is greater than the left maximum height, then no water can be trapped at this position
+            // Otherwise, the trapped water will be the difference between the two heights
+            else
+                water += lmax - arr[l];
+
+            // Move the left pointer to the right
+            l++;
+        }
+        // If the height at the right pointer is less than the height at the left pointer
+        else
+        {
+            // Check if the height at the right pointer is greater than the right maximum height
+            if (arr[r] > rmax)
+                rmax = arr[r]; // Update the right maximum height
+
+            // Calculate the trapped water at the current position and add it to the total
+            // The trapped water is the difference between the right maximum height and the height at the current position
+            // If the height at the current position is greater than the right maximum height, then no water can be trapped at this position
+            // Otherwise, the trapped water will be the difference between the two heights
+            else
+                water += rmax - arr[r];
+
+            // Move the right pointer to the left
+            r--;
+        }
+    }
+
+    // Return the total trapped water
+    return water;
+}
