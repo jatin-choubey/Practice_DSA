@@ -1,5 +1,4 @@
 // Write a program to add two numbers as Linked lists from left to right
-
 /*
     L1 :  1 - 5 - 4
     L2 :  4 - 8 - 7 - 9
