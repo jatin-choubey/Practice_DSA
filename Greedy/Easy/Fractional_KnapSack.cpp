@@ -20,7 +20,7 @@ RATIOs = (Value / Weight)
   3.0
   0.225
 
-Then sort the new Knap Sack vector (ks) in decreasing order on the basis of this calculated Ratios.
+Then sort the new Knap Sack vector (ks) (Containing the Weight, Value and Ratio all together) in decreasing order on the basis of this calculated Ratios.
 
 Now we GREEDILY pick the weight that has the maximum relative Value.
 
