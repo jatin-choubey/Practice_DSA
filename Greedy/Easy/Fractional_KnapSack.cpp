@@ -75,20 +75,20 @@ double maximumValue(vector<pair<int, int>> &items, int n, int sack_Space)
         if (sack_Space <= 0)
             break;
 
-        // If the current item's weight is greater than the sack's remaining space,
-        // take a fraction of the item and add its value to the total answer
-        if (ks[i].weight > sack_Space)
+        // If the current item's weight can fit entirely into the sack,
+        if (ks[i].weight <= sack_Space)
         {
-            double val = ((double)sack_Space / (double)ks[i].weight) * double(ks[i].value);
-            ANS += val;
-            break; // As the sack is now full, break the loop
-        }
-        else
-        {
-            // If the current item's weight can fit entirely into the sack,
             // add its value to the total answer and reduce the sack's remaining space accordingly
             ANS += (double)ks[i].value;
             sack_Space -= ks[i].weight;
+        }
+        else
+        {
+            // If the current item's weight is greater than the sack's remaining space,
+            // take a fraction of the item and add its value to the total answer
+            double val = ((double)sack_Space / (double)ks[i].weight) * double(ks[i].value);
+            ANS += val;
+            break; // As the sack is now full, break the loop
         }
     }
 
@@ -116,16 +116,17 @@ double maximumValue(vector<pair<int, int>> &items, int n, int sack_Space)
     {
         if (sack_Space <= 0)
             break;
-        if (items[i].first > sack_Space)
+
+        if (items[i].first <= sack_Space)
+        {
+            ans += (double)items[i].second;
+            sack_Space -= items[i].first;
+        }
+        else
         {
             double val = ((double)sack_Space / (double)items[i].first) * double(items[i].second);
             ans += val;
             break;
-        }
-        else
-        {
-            ans += (double)items[i].second;
-            sack_Space -= items[i].first;
         }
     }
     return ans;
