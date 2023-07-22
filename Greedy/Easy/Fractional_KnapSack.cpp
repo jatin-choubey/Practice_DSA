@@ -95,3 +95,38 @@ double maximumValue(vector<pair<int, int>> &items, int n, int sack_Space)
     // Return the maximum value that can be obtained from the items given the sack's capacity
     return ANS;
 }
+
+// OPTIMISED Solution (Removed Use of Extra Vector Space)
+
+#include <bits/stdc++.h>
+
+bool cmp(pair<int, int> v1, pair<int, int> v2)
+{
+    double r1 = (double)v1.second / (double)v1.first;
+    double r2 = (double)v2.second / (double)v2.first;
+    return r1 > r2;
+}
+double maximumValue(vector<pair<int, int>> &items, int n, int sack_Space)
+{
+    sort(items.begin(), items.end(), cmp);
+
+    double ans = 0;
+
+    for (int i = 0; i < items.size(); i++)
+    {
+        if (sack_Space <= 0)
+            break;
+        if (items[i].first > sack_Space)
+        {
+            double val = ((double)sack_Space / (double)items[i].first) * double(items[i].second);
+            ans += val;
+            break;
+        }
+        else
+        {
+            ans += (double)items[i].second;
+            sack_Space -= items[i].first;
+        }
+    }
+    return ans;
+}
