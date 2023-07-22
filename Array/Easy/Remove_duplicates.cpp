@@ -19,7 +19,7 @@ int removeDuplicates(vector<int> &nums, int n)
     while (e < n)
     {
         // If the element at the start pointer (s) is different from the element at the end pointer (e),
-        // it means the end pointer (e) has found a new distinct element
+        // it means the end pointer (e) has found a distinct element
         if (nums[s] != nums[e])
         {
             s++;               // Move the start pointer (s) one step forward to the next position to replace the duplicates
