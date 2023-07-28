@@ -20,7 +20,8 @@ Explaination:
   So we try to do Job 1 on previous day 1.
   Profit = 1613 + 605 = 2218
 
-* Complete Job 3 on day 4.
+* Complete Job 3 on day 4, But we are already doing Job 5 on day 4
+  So we try to do Job 3 on previous day 3.
   Profit = 2218 + 383 = 2601
 
 * Complete Job 2 on day 2, but we are doing Job 4 on day 2.
