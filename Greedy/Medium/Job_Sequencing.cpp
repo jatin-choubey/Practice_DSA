@@ -12,7 +12,7 @@ Input: ID  DEADLINE  PROFIT
 Output: {3, 2601}
 
 Explaination:
-* Complete Job 5 on day 5, Profit = 0 + 896 = 896
+* Complete Job 5 on day 4, Profit = 0 + 896 = 896
 
 * Complete Job 4 on day 2, Profit = 896 + 717 = 1613
 
