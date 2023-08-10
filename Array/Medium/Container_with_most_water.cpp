@@ -11,25 +11,28 @@
 // as there is no chance of finding a greater area with the current height.
 // The function finally returns the maximum water container area found.
 
-int maxArea(vector<int> &height)
+class Solution
 {
-    int volume = 0, ans = 0, i = 0, j = height.size() - 1;
-    while (i < j)
+public:
+    int maxArea(vector<int> &height)
     {
-        int lower = min(height[i], height[j]);
+        int n = height.size();
+        int left = 0;      // Place the left pointer on the starting index
+        int right = n - 1; // Place the right pointer on the ending index.
+        int ans = 0;
+        while (left < right)
+        {
+            int dist = right - left;                      // Distance between the poles
+            int lower = min(height[left], height[right]); // To find the smaller one amongst the two poles.
+            int vol = lower * dist;                       // Volume of water that can be stored between the current two poles.
+            ans = max(ans, vol);                          // Maximum betweem the current volume and the max.
 
-        // Update 'ans' with the maximum of its current value and the area between the vertical lines.
-        ans = max(ans, lower * (j - i));
+            while (left < right && height[left] <= lower) // Keep moving the left pointer till it is lesser than or equal to the lower
+                left++;
 
-        // Move 'i' towards the right if its height is less than or equal to 'lower'.
-        while (i < j and height[i] <= lower)
-            i++;
-
-        // Move 'j' towards the left if its height is less than or equal to 'lower'.
-        while (i < j and height[j] <= lower)
-            j--;
+            while (left < right && height[right] <= lower) // Keep moving the right pointer till it is lesser than or equal to the lower
+                right--;
+        }
+        return ans;
     }
-
-    // Return the maximum water container area found.
-    return ans;
-}
+};
