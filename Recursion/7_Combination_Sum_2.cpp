@@ -1,10 +1,10 @@
 /*
-Given a collection of candidate numbers (nums) and a target number (target),
-find all unique combinations in candidates where the candidate numbers sum to target.
+Given an array of numbers (nums) and a target number (target),
+Find all unique combinations in 'nums' where the elements sum to target.
 
-Each number in candidates may only be used once in the combination.
+Each number in the 'nums' array may only be used once in the combination.
 
-Input: candidates = [10,1,2,7,6,1,5], target = 8
+Input: nums = [10,1,2,7,6,1,5], target = 8
 Output:
 [
 [1,1,6],
@@ -67,12 +67,12 @@ public:
             op.pop_back();                                  // Backtracking
         }
     }
-    vector<vector<int>> combinationSum2(vector<int> &candidates, int target)
+    vector<vector<int>> combinationSum2(vector<int> &nums, int target)
     {
-        sort(candidates.begin(), candidates.end());
+        sort(nums.begin(), nums.end());
         vector<vector<int>> ans;
         vector<int> op;
-        helper(candidates, ans, op, target, 0);
+        helper(nums, ans, op, target, 0);
         return ans;
     }
 };
