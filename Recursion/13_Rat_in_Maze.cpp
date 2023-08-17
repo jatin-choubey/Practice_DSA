@@ -31,40 +31,40 @@ public:
         if (canGo(maze, n, row, col + 1, lookup))
         {
             path.push_back('R');                            // Add 'R' to path
-            lookup[row][col + 1] = 1;                       // Mark the cell as visited
+            lookup[row][col + 1] = 1;                       // Mark the lookup table cell as visited
             find(maze, n, ans, path, row, col + 1, lookup); // Recurse
             path.pop_back();                                // Backtrack: remove 'R' from path
-            lookup[row][col + 1] = 0;                       // Unmark the cell
+            lookup[row][col + 1] = 0;                       // Unmark the lookup table cell
         }
 
         // Try moving DOWN
         if (canGo(maze, n, row + 1, col, lookup))
         {
             path.push_back('D');                            // Add 'D' to path
-            lookup[row + 1][col] = 1;                       // Mark the cell as visited
+            lookup[row + 1][col] = 1;                       // Mark the lookup table cell as visited
             find(maze, n, ans, path, row + 1, col, lookup); // Recurse
             path.pop_back();                                // Backtrack: remove 'D' from path
-            lookup[row + 1][col] = 0;                       // Unmark the cell
+            lookup[row + 1][col] = 0;                       // Unmark the lookup table cell
         }
 
         // Try moving LEFT
         if (canGo(maze, n, row, col - 1, lookup))
         {
             path.push_back('L');                            // Add 'L' to path
-            lookup[row][col - 1] = 1;                       // Mark the cell as visited
+            lookup[row][col - 1] = 1;                       // Mark the lookup table cell as visited
             find(maze, n, ans, path, row, col - 1, lookup); // Recurse
             path.pop_back();                                // Backtrack: remove 'L' from path
-            lookup[row][col - 1] = 0;                       // Unmark the cell
+            lookup[row][col - 1] = 0;                       // Unmark the lookup table cell
         }
 
         // Try moving UP
         if (canGo(maze, n, row - 1, col, lookup))
         {
             path.push_back('U');                            // Add 'U' to path
-            lookup[row - 1][col] = 1;                       // Mark the cell as visited
+            lookup[row - 1][col] = 1;                       // Mark the lookup table cell as visited
             find(maze, n, ans, path, row - 1, col, lookup); // Recurse
             path.pop_back();                                // Backtrack: remove 'U' from path
-            lookup[row - 1][col] = 0;                       // Unmark the cell
+            lookup[row - 1][col] = 0;                       // Unmark the lookup table cell
         }
     }
 
