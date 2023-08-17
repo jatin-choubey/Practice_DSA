@@ -17,7 +17,7 @@ public:
     int helper(vector<vector<int>> &grid, int x, int y, int zero)
     {
         if (x < 0 || y < 0 || x == grid.size() || y == grid[0].size() || grid[x][y] == -1)
-            return 0; // Return 0 ways if invalid
+            return 0; // Return 0 ways if invalid or we reached out of bounds while searching
         if (grid[x][y] == 2)
         {
             if (zero == -1) // Return 1 way if visited all zeros
