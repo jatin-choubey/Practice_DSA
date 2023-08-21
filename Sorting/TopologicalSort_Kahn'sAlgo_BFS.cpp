@@ -38,12 +38,16 @@ vector<int> topologicalSort(map<int, vector<int>> &graph, vector<int> &inDegree)
 int main()
 {
     map<int, vector<int>> graph;
-    graph[0] = {1, 2};
+    graph[0] = {};
     graph[1] = {};
-    graph[2] = {3};
-    graph[3] = {1};
+    graph[2] = {};
+    graph[3] = {4};
+    graph[4] = {};
+    graph[5] = {2};
+    graph[6] = {1, 3, 4, 5};
+    graph[7] = {};
 
-    vector<int> inDegree = {0, 2, 1, 1};
+    vector<int> inDegree = {0, 1, 1, 1, 2, 1, 0, 0};
 
     vector<int> ans;
     ans = topologicalSort(graph, inDegree);
