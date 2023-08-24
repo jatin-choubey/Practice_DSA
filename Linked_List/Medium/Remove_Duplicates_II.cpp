@@ -26,8 +26,8 @@ public:
 
         // Initialize pointers for traversal and tracking
         ListNode *temp = dummy; // temp points to the last non-duplicate node
-        ListNode *st = head;    // st points to the start of potential duplicates
-        ListNode *en = head;    // en is used to explore potential duplicates
+        ListNode *st = head;    // 'st' points to the start of potential duplicates
+        ListNode *en = head;    // 'en' is used to explore potential duplicates
         int count = 0;          // count keeps track of duplicate nodes
 
         // Traverse through the linked list
@@ -37,7 +37,7 @@ public:
             if (en != NULL && st->val == en->val)
             {
                 count++;       // Increment the duplicate count
-                en = en->next; // Move en to the next node
+                en = en->next; // Move 'en' to the next node
                 continue;      // Continue to the next iteration
             }
 
@@ -46,7 +46,7 @@ public:
             {
                 temp->next = st;   // Link the last non-duplicate node to the current node
                 temp = temp->next; // Move temp to the current node
-                st = en;           // Update st to the next potential start
+                st = en;           // Update 'st' to the next potential start
                 count = 0;         // Reset the duplicate count
             }
 
@@ -54,7 +54,7 @@ public:
             if (en != NULL && st->val != en->val)
             {
                 count = 0; // Reset the duplicate count
-                st = en;   // Update st to the new potential start
+                st = en;   // Update 'st' to the new potential start
             }
         }
 
@@ -63,7 +63,7 @@ public:
             temp->next = st; // Link last non-duplicate node
         else
         {
-            st = en;         // Update st to en (for last duplicate node)
+            st = en;         // Update 'st' to 'en' (for last duplicate node)
             temp->next = st; // Link last duplicate node or NULL
         }
 
