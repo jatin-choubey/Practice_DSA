@@ -3,7 +3,7 @@ Given an N*N chess board. In how many ways can you place N Queens in such a way 
 Eg. Input = 4
 
 OUTPUT :
-   Option 1                    Option 2
+  Solution 1                  Solution 2
 .   Q   .   .               .   .   Q   .
 .   .   .   Q               Q   .   .   .
 Q   .   .   .               .   .   .   Q
