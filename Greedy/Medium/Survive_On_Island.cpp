@@ -23,15 +23,15 @@ public:
         if (foodDay > maxFood)
             return -1;
 
-        int ans = 1;                // Initialize the minimum number of days to buy food to 1.
-        int total = foodDay * days; // Calculate the total food required for the given days.
-        int help = maxFood;         // Store the initial maximum units of food available.
+        int ans = 1;                   // Initialize the minimum number of days to buy food to 1.
+        int total = foodDay * days;    // Calculate the total food required for the given days.
+        int initial_MaxFood = maxFood; // Store the initial maximum units of food available.
 
         // Keep buying food until the maximum available food is greater than or equal to the total required.
         while (maxFood < total)
         {
-            ans++;                    // Increment the count of buying days.
-            maxFood = maxFood + help; // Increase the available food units by the initial maximum.
+            ans++;                               // Increment the count of buying days.
+            maxFood = maxFood + initial_MaxFood; // Increase the available food units by the initial maximum.
         }
 
         int sundays = days / 7;          // Calculate the number of Sundays in the given 'days'.
