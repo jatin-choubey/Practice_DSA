@@ -47,6 +47,9 @@ int main()
     graph[6] = {1, 3, 4, 5};
     graph[7] = {};
 
+    // In-Degree tells how many paths are entering inside, or ending at the particular node.
+    // For example, 2 path are ending at Node 4. One from Node 3 and other from Node 6.
+    //                      0  1  2  3  4  5  6  7
     vector<int> inDegree = {0, 1, 1, 1, 2, 1, 0, 0};
 
     vector<int> ans;
