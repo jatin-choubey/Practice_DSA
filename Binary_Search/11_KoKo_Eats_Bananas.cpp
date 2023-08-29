@@ -1,3 +1,32 @@
+/*
+Given a pile of banans. Where piles[i] represents number of bananas in 'i'th pile.
+Koko wants to eat all the Bananas within given 'h' hours.
+If koko eats all the bananas of the 'i'th pile in one hour, he will not eat any other banana
+from the next pile, and waits till the next hour to go to next pile of banans.
+
+Koko likes to eat slowly.
+
+Return the Minimum possible speed required to finish all the Bananas within given 'h' hours.
+
+EXAMPLE:
+Input: piles = [3,6,7,11], h = 8
+Output: 4
+
+Explain:
+
+In Hour 1 ->  Koko eats all the 3 bananas of pile 0
+In hour 2 ->  Koko eats 4 bananas from pile 1 (2 banans left)
+In Hour 3 ->  Koko eats the remaining 2 bananas from Pile 1
+In Hour 4 ->  Koko eats 4 bananas from Pile 1 (3 Bananas Left)
+In Hour 5 ->  Koko eats the remaining 3 Bananas from pile 2
+In Hour 6 ->  Koko eats 4 bananas from Pile 3 (7 Bananas left)
+In Hour 7 ->  Koko eats another 4 bananas from Pile 3 (3 Bananas left)
+In Hour 8 ->  Koko eats the remaining 3 bananas from pile 3
+------------ FINISHED ------------
+
+
+*/
+
 class Solution
 {
 public:
