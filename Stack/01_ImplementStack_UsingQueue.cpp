@@ -1,10 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define MAX 10;
+#define MAX 10
 
 // Using Two Queues
 void two_Queue_Push(int val, queue<int> &q1, queue<int> &q2)
 {
+    if (q1.size() == MAX)
+    {
+        cout << "OverFlown and hence can not push " << val << endl;
+        return;
+    }
     q2.push(val);
     while (!q1.empty())
     {
@@ -18,6 +23,11 @@ void two_Queue_Push(int val, queue<int> &q1, queue<int> &q2)
 // Using One Queue
 void single_Queue_Push(int val, queue<int> &q)
 {
+    if (q.size() == MAX)
+    {
+        cout << "OverFlown and hence can not push " << val << endl;
+        return;
+    }
     int Qsize = q.size();
     q.push(val);
     for (int i = 1; i <= Qsize; i++)
@@ -51,6 +61,13 @@ int main()
         two_Queue_Push(2, q1, q2);
         two_Queue_Push(3, q1, q2);
         two_Queue_Push(4, q1, q2);
+        two_Queue_Push(5, q1, q2);
+        two_Queue_Push(6, q1, q2);
+        two_Queue_Push(7, q1, q2);
+        two_Queue_Push(8, q1, q2);
+        two_Queue_Push(9, q1, q2);
+        two_Queue_Push(10, q1, q2);
+        two_Queue_Push(11, q1, q2);
 
         while (!q1.empty())
         {
