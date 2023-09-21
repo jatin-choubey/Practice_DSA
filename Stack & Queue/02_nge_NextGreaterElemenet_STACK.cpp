@@ -5,16 +5,16 @@ vector<int> nextGreater(vector<int> &nums)
 {
     int n = nums.size();
     vector<int> result(n, -1);
-    stack<int> st; // Stack to store indices
+    stack<int> nge; // Stack to store indices
 
     for (int i = 0; i < n; i++)
     {
-        while (!st.empty() && nums[i] > nums[st.top()])
+        while (!nge.empty() && nums[i] > nums[nge.top()])
         {
-            result[st.top()] = nums[i];
-            st.pop();
+            result[nge.top()] = nums[i];
+            nge.pop();
         }
-        st.push(i);
+        nge.push(i);
     }
 
     return result;
