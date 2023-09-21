@@ -7,10 +7,15 @@
 - Sorting
 - Mapping Hash
 - Hash Set
-- Stack / Monotonic Stack
-- Queue / Monotonic Queue
+- Greedy
+- Sliding Window
+- Backward Iteration
+- Stack
+- Monotonic Stack
+- Queue
+- Monotonic Queue
 - Dequeue
-- InOrder, PreOrder, PostOrder
+- InOrder, PreOrder, PostOrder, LevelOrder
 - Adjacency List
 - Heap Tree
 - Dynamic Programming (Top Down, Bottom Up)
