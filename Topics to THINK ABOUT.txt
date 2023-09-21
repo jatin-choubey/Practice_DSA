@@ -1,3 +1,7 @@
+When you encounter a challenging DSA (Data Structures and Algorithms) coding problem and find yourself 
+unable to formulate a suitable algorithm or data structure, consider applying the following techniques. 
+You can explore these approaches one by one, starting with those that seem most relevant:
+
 - Prefix Sum
 - Suffix Sum
 - Binary Search
