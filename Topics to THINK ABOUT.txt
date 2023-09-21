@@ -1,0 +1,19 @@
+- Prefix Sum
+- Suffix Sum
+- Binary Search
+- Shortest Path Algo
+- BFS
+- DFS
+- Sorting
+- Mapping Hash
+- Hash Set
+- Stack / Monotonic Stack
+- Queue / Monotonic Queue
+- Dequeue
+- InOrder, PreOrder, PostOrder
+- Adjacency List
+- Heap Tree
+- Dynamic Programming (Top Down, Bottom Up)
+- Recursion + Memoization
+- Class & Struct for custom data type
+- Bit Manipulation
