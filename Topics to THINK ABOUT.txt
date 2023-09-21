@@ -15,5 +15,6 @@
 - Heap Tree
 - Dynamic Programming (Top Down, Bottom Up)
 - Recursion + Memoization
+- BackTracking
 - Class & Struct for custom data type
 - Bit Manipulation
