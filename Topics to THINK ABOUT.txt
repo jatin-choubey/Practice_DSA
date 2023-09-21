@@ -1,5 +1,6 @@
 When you encounter a challenging DSA (Data Structures and Algorithms) coding problem and find yourself 
 unable to formulate a suitable algorithm or data structure, consider applying the following techniques. 
+Remember, a possible algorithm or approach will often be right in front of your eyes; you just have to figure it out.
 You can explore these approaches one by one, starting with those that seem most relevant:
 
 - Prefix Sum
