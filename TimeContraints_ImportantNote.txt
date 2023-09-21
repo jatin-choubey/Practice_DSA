@@ -1,0 +1,26 @@
+In order to Run any program within the given Time Constraints and not get a Time Limit Exceeded, follow the below given Data.
+
+ ___________________________________________
+|   Constraints   |    Time Complexity      |
+|-----------------+-------------------------|
+|                 |                         |
+|        If       | Then TC could be at max |
+|                 |                         |
+|    n <= 12      |       O(!n)             |
+|                 |                         |    
+|    n <= 25      |       O(2n)             |
+|                 |                         |
+|    n <= 100     |       O(n^4)            |
+|                 |                         |
+|    n <= 500     |       O(n^3)            |
+|                 |                         |
+|    n <= 10^4    |       O(n^2)            |
+|                 |                         |    
+|    n <= 10^6    |       O(n log n)        |
+|                 |                         |                         
+|    n <= 10^8    |       O(n)              |
+|                 |                         |
+|    n > 10^8     |       O(1)  or  O(log)  |
+|                 |                         |
+`````````````````````````````````````````````
+
