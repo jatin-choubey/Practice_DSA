@@ -1,0 +1,60 @@
+                                            BINARY TREE
+                                           *************
+A Binary Tree is a Non-Linear Tree like data structure, where every parent node can have at max 2 child nodes.
+
+
+Below are some of the Important types of Binary Trees.
+
+1.  FULL Binary Tree
+----------------------
+    A full binary tree is the one where each node has either 0 child or no children. No node has 1 child.
+
+    eg:             a
+                   / \
+                  b   c
+                 / \ 
+                d   e
+
+2.  COMPLETE Binary Tree
+--------------------------
+    A complete binary tree is a binary tree in which every level, except possibly the last, is completely filled, and all 
+    nodes in the last level are as far left as possible.
+
+    eg:             O       Here you see all                                O           Here you see the last level is not
+                  /   \     levels are completely                         /   \         filled completely, but are filled 
+                 O     O    filled.                                      O     O        from the Left to Right.
+               /  \   / \                                               / \    /
+              O    O O   O                                             O   O  O 
+
+3.  PERFECT Binary Tree
+-------------------------
+    A Perfect binary tree is a binary tree in which every level is completely filled.
+
+    eg:             O       Here you see all
+                  /   \     levels are completely
+                 O     O    filled.
+               /  \   / \
+              O    O O   O  
+
+4.  BALANCED Binary Tree
+---------------------------
+    A Balanced Binary Tree is the one whose height is at max 'logN' where 'N' is the number of nodes.
+
+    eq:     N = 8
+            logN = log8 = 3
+
+            This means if the number of nodes is 8, the height of a Balanced binary tree can not exceed 3.
+
+5.  DEGENERATE Binary Tree
+----------------------------
+
+    A Left skewed or a Right skewed Binary Tree is called a Degenerate Binary Tree.
+
+    eq:             O       LEFT SKEWED                                   O     RIGHT SKEWED
+                   / \                                                   / \
+                  O                                                         O
+                 / \                                                       / \ 
+                O                                                             O
+               / \                                                           / \
+              O                                                                 O
+                   
