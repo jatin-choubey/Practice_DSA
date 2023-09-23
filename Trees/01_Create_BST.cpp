@@ -78,6 +78,116 @@ void postorder(node *root)
         cout << root->val << " ";
     }
 }
+void levelorder(node *root)
+{
+    if (root == NULL)
+    {
+        cout << -1;
+        return;
+    }
+
+    queue<node *> Q;
+    Q.push(root);
+    while (!Q.empty())
+    {
+        int size = Q.size();
+
+        for (int i = 0; i < size; i++)
+        {
+            node *FRONT = Q.front();
+
+            if (FRONT->left)
+                Q.push(FRONT->left);
+
+            if (FRONT->right)
+                Q.push(FRONT->right);
+
+            cout << FRONT->val << " ";
+            Q.pop();
+        }
+        cout << endl;
+    }
+}
+void iterative_PreOrder(node *root)
+{
+    if (root == NULL)
+    {
+        cout << -1;
+        return;
+    }
+    stack<node *> st;
+    st.push(root);
+    while (!st.empty())
+    {
+        node *top = st.top();
+        cout << top->val << " ";
+        st.pop();
+        if (top->right)
+            st.push(top->right);
+        if (top->left)
+            st.push(top->left);
+    }
+}
+void iterative_InOrder(node *root)
+{
+    if (root == NULL)
+    {
+        cout << -1;
+        return;
+    }
+    stack<node *> st;
+
+    node *temp = root;
+    while (true)
+    {
+        if (temp)
+        {
+            st.push(temp);
+            temp = temp->left;
+        }
+        else
+        {
+            if (st.empty())
+                break;
+            temp = st.top();
+            cout << temp->val << " ";
+            st.pop();
+            temp = temp->right;
+        }
+    }
+}
+void iterative_PostOrder(node *root)
+{
+    if (root == NULL)
+    {
+        cout << -1;
+        return;
+    }
+    stack<node *> s1;
+    stack<node *> s2;
+    s1.push(root);
+    while (!s1.empty())
+    {
+        node *top = s1.top();
+        s1.pop();
+        s2.push(top);
+
+        if (top->left)
+        {
+            s1.push(top->left);
+        }
+
+        if (top->right)
+        {
+            s1.push(top->right);
+        }
+    }
+    while (!s2.empty())
+    {
+        cout << s2.top()->val << " ";
+        s2.pop();
+    }
+}
 int main()
 {
     node *root = NULL;
@@ -97,6 +207,18 @@ int main()
 
     cout << "\nPOST\n";
     postorder(root);
+
+    cout << "\nLEVEL\n";
+    levelorder(root);
+
+    cout << "Iterative PRE\n";
+    iterative_PreOrder(root);
+
+    cout << "\nIterative IN\n";
+    iterative_InOrder(root);
+
+    cout << "\nIterative POST\n";
+    iterative_PostOrder(root);
 
     return 0;
 }
