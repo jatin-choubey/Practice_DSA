@@ -7,7 +7,7 @@ Below are some of the Important types of Binary Trees.
 
 1.  FULL Binary Tree
 ----------------------
-    A full binary tree is the one where each node has either 0 child or no children. No node has 1 child.
+    A full binary tree is the one where each node has either 0 child or 2 children. No node has 1 child.
 
     eg:             a
                    / \
@@ -18,7 +18,7 @@ Below are some of the Important types of Binary Trees.
 2.  COMPLETE Binary Tree
 --------------------------
     A complete binary tree is a binary tree in which every level, except possibly the last, is completely filled, and all 
-    nodes in the last level are as far left as possible.
+    nodes in the last level are filled from left to right.
 
     eg:             O       Here you see all                                O           Here you see the last level is not
                   /   \     levels are completely                         /   \         filled completely, but are filled 
