@@ -39,6 +39,7 @@ Below are some of the Important types of Binary Trees.
 4.  BALANCED Binary Tree
 ---------------------------
     A Balanced Binary Tree is the one whose height is at max 'logN' where 'N' is the number of nodes.
+    A height-balanced binary tree is a binary tree in which the depth of the two subtrees of every node never differs by more than one.
 
     eq:     N = 8
             logN = log8 = 3
