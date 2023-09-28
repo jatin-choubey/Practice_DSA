@@ -14,11 +14,14 @@ Input = 3, 2, 1, 2, 0,
     Output = 3 2 1 4 7 6 5
 
 */
+
+// Checking if the Current Element is the Root Node.
 bool isLeaf(node *root)
 {
     return (root->left == NULL && root->right == NULL);
 }
 
+// To traverse the Left Boundary Elements
 void addLeftBoundary(node *root, vector<int> &ans)
 {
     node *curr = root->left;
