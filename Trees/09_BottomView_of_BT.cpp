@@ -1,5 +1,6 @@
-/*
-hat will the tree look like, when viewed from Bottom
+/*      Vertical Traversal
+
+What will the tree look like, when viewed from Bottom
 (Left to Right)
 
 
@@ -13,7 +14,7 @@ hat will the tree look like, when viewed from Bottom
 
        ^
       ||
-eyes looking from Bottom
+Eyes looking from Bottom
 
 output : 3, 6, 4, 7, 5
 
