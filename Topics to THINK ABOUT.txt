@@ -12,6 +12,7 @@ You can explore these approaches one by one, starting with those that seem most 
 - Sorting
 - Mapping Hash
 - Hash Set
+- MultiSet
 - Greedy
 - Sliding Window
 - Backward Iteration
@@ -20,11 +21,11 @@ You can explore these approaches one by one, starting with those that seem most 
 - Queue
 - Monotonic Queue
 - Dequeue
-- InOrder, PreOrder, PostOrder, LevelOrder
+- InOrder, PreOrder, PostOrder, LevelOrder, Vertical Order
 - Adjacency List
 - Heap Tree
 - Dynamic Programming (Top Down, Bottom Up)
 - Recursion + Memoization
 - BackTracking
-- Class & Struct for custom data type
+- Class & Struct for custom data types and comparators
 - Bit Manipulation
