@@ -16,6 +16,13 @@ eyes looking from top
      6   7
 
 Output = 3, 1, 0, 2, 5
+
+The Idea here is to map every vertical level with its first found node, because the inital encountered node at
+any vertical level will be the only one visible from the top.
+
+We utilize a 'map' data structure for this purpose because it allows us to print the nodes
+from left to right, ensuring that nodes with the smallest vertical positions are printed first.
+
 */
 
 // Approach :
@@ -23,72 +30,70 @@ Output = 3, 1, 0, 2, 5
 class Solution
 {
 public:
-    // Function to return a vector containing the top view of the binary tree
     vector<int> topView(Node *root)
     {
-        // If the root is NULL, return an empty vector
+        // Check if the root is NULL (empty tree).
         if (root == NULL)
-            return {};
+            return {}; // Return an empty vector if the tree is empty.
 
-        // Create a queue to hold pairs of Node pointers and their vertical distances from the root
-        queue<pair<Node *, /*vertical*/ int>> Q;
+        // Create a queue to perform level-order traversal of the tree.
+        queue<pair<Node *, int>> Q;
 
-        // Create a map to hold the first node at each vertical distance
-        map</*vertical*/ int, Node *> mapp;
+        // Create a map to store the vertical distance as the key and the first node encountered at that distance as the value.
+        map<int, Node *> mapp;
 
-        // Push the root node into the queue with a vertical distance of 0
+        // Start with the root node at a vertical distance of 0.
         Q.push({root, 0});
 
-        // Add the root node to the map
+        // Initialize the map with the root node at distance 0.
         mapp[0] = root;
 
-        // While there are nodes in the queue
         while (!Q.empty())
         {
-            // Get the node at the front of the queue
-            auto top = Q.front();
+            int size = Q.size();
 
-            // Get its vertical distance
-            int vertical = top.second;
-
-            // Remove it from the queue
-            Q.pop();
-
-            // If it has a left child
-            if (top.first->left)
+            // Process all nodes at the current level.
+            for (int i = 0; i < size; i++)
             {
-                // Add the left child to the queue with a vertical distance one less than its parent's
-                Q.push({top.first->left, vertical - 1});
-                // If there is no node in the map at this vertical distance yet
-                if (mapp.find(vertical - 1) == mapp.end())
+                auto top = Q.front();
+
+                int vertical = top.second;
+
+                Q.pop();
+
+                // Explore the left child and enqueue it with a decreased vertical distance.
+                if (top.first->left)
                 {
-                    // Add this node to the map
-                    mapp[vertical - 1] = top.first->left;
+                    Q.push({top.first->left, vertical - 1});
+
+                    // If the vertical distance is not in the map, add the left child as the first node at that distance.
+                    if (mapp.find(vertical - 1) == mapp.end())
+                    {
+                        mapp[vertical - 1] = top.first->left;
+                    }
                 }
-            }
-            // If it has a right child
-            if (top.first->right)
-            {
-                // Add the right child to the queue with a vertical distance one more than its parent's
-                Q.push({top.first->right, vertical + 1});
-                // If there is no node in the map at this vertical distance yet
-                if (mapp.find(vertical + 1) == mapp.end())
+
+                // Explore the right child and enqueue it with an increased vertical distance.
+                if (top.first->right)
                 {
-                    // Add this node to the map
-                    mapp[vertical + 1] = top.first->right;
+                    Q.push({top.first->right, vertical + 1});
+
+                    // If the vertical distance is not in the map, add the right child as the first node at that distance.
+                    if (mapp.find(vertical + 1) == mapp.end())
+                    {
+                        mapp[vertical + 1] = top.first->right;
+                    }
                 }
             }
         }
 
-        // Create a vector to hold the answer
+        // Create a vector to store the top view nodes.
         vector<int> ans;
 
-        // For each entry in the map (which are sorted by their keys, i.e., their vertical distances)
+        // Iterate through the map and add the data of the first nodes to the answer vector.
         for (auto node : mapp)
-            // Add the data of the node to the answer vector
             ans.push_back(node.second->data);
 
-        // Return the answer vector
-        return ans;
+        return ans; // Return the vector containing the top view nodes.
     }
 };
