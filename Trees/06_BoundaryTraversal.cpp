@@ -1,7 +1,7 @@
 /*
 Traverse and Print Boundary of a Binary Tree
 
-Input = 3, 2, 1, 2, 0,
+Input = 3, 2, 1, 5, 4, 6, 7
 
             3
           /   \
