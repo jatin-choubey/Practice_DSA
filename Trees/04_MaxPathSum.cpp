@@ -19,7 +19,7 @@ public:
         int left = helper(root->left, sum, maxi);
         int right = helper(root->right, sum, maxi);
 
-        // Update the sum to be the maximum of the current sum and the sum of the left and right child and the node value
+        // This is Done to store the Maximum Path Sum that can be obtained via passing through this particular node.
         sum = max(sum, left + right + root->val);
 
         // The below two lines are basically helps to find if we will pass our path from the left subtree or right subtree or just consider root or neither of them and just 0.
