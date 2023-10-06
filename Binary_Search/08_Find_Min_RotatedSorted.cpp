@@ -29,14 +29,11 @@ public:
             int mid = (left + right) / 2; // Calculate the middle index between left and right pointers.
 
             if (nums[mid] > nums[right]) // Check if the value at middle index is greater than the value at right pointer.
-            {
-                left = mid + 1; // If true, Pivot is somewhere between Mid and Right.
-            }
+                left = mid + 1;          // If true, Pivot is somewhere between Mid and Right.
 
             else if (nums[mid] < nums[right]) // Check if the value at middle index is less than the value at right pointer.
-            {
-                right = mid; // If True, Pivot if between Mid and left, both inclusive.
-            }
+                right = mid;                  // If True, Pivot if between Mid and left, both inclusive.
+
             else
                 right--; // If the values at middle and right are equal, decrement the right pointer to consider the next element.
 
