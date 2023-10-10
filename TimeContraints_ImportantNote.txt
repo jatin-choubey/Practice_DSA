@@ -20,7 +20,6 @@ In order to Run any program within the given Time Constraints and not get a Time
 |                 |                         |                         
 |    n <= 10^8    |       O(n)              |
 |                 |                         |
-|    n > 10^8     |       O(1)  or  O(log)  |
+|    n > 10^8     |       O(1)  or  O(logn) |
 |                 |                         |
 `````````````````````````````````````````````
-
