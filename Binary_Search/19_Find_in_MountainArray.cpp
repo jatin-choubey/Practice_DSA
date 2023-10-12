@@ -8,6 +8,8 @@ A mountian array is the array which is strictly increasing, and then at a certin
 eg - 1 2 3 4 5 3 2 0
              ^
             Peak
+Given a mountain array mountainArr, return the minimum index such that mountainArr.get(index) == target.
+If such an index does not exist, return -1.
 
 You cannot access the mountain array directly. You may only access the array using a MountainArray interface:
 
