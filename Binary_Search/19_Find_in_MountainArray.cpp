@@ -49,6 +49,7 @@ Explanation: 3 does not exist in the array, so we return -1.
     3: If Not Found, search in the Right Subhalf (Peak + 1 to n - 1).
 
     Note: We search in the left subhalf first, because we want the first occurence of the target
+          Searching in the Right Sub Half is slightly different.
 */
 
 class Solution
@@ -113,8 +114,8 @@ public:
 
         result = search_Left_From_Peak(mountainArr, target, 0, peak); // search in left subhalf.
 
-        if (result != -1)  // If not found, dont straight away put -1, because it can be found int the right subarray.
-            return result; // Return in found.
+        if (result != -1)  // If not found, dont straight away return -1, because it can be found int the right subarray.
+            return result; // Return if found.
 
         result = search_Right_from_Peak(mountainArr, target, peak + 1, n - 1); // If not found in the left sub-array, search for it in the right sub array.
 
