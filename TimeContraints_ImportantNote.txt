@@ -8,7 +8,7 @@ In order to Run any program within the given Time Constraints and not get a Time
 |                 |                         |
 |    n <= 12      |       O(!n)             |
 |                 |                         |    
-|    n <= 25      |       O(2n)             |
+|    n <= 25      |       O(2^n)            |
 |                 |                         |
 |    n <= 100     |       O(n^4)            |
 |                 |                         |
