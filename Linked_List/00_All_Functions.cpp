@@ -136,3 +136,72 @@ int main()
 
     return 0;
 }
+
+// Java code for linkedlist insertion
+
+// import java.util.Scanner;
+
+// class Node
+// {
+//     int data;
+//     Node next;
+
+//     Node(int val)
+//     {
+//         data = val;
+//         next = null;
+//     }
+// }
+
+// class Main
+// {
+// public
+//     static void main(String[] args)
+//     {
+//         Node head = null;
+//         System.out.println("Enter the number to be inserted in the Linked List");
+//         Scanner sc = new Scanner(System.in);
+//         while (true)
+//         {
+//             String input = sc.next();
+//             if (input.equals("x"))
+//             {
+//                 break;
+//             }
+//             int n = Integer.parseInt(input);
+//             head = insertAtTail(head, n);
+//         }
+
+//         display(head);
+//     }
+
+//     static Node insertAtTail(Node head, int val)
+//     {
+//         Node n = new Node(val);
+//         if (head == null)
+//         {
+//             head = n;
+//             return head;
+//         }
+//         else
+//         {
+//             Node temp = head;
+//             while (temp.next != null)
+//             {
+//                 temp = temp.next;
+//             }
+//             temp.next = n;
+//         }
+//         return head;
+//     }
+
+//     static void display(Node head)
+//     {
+//         while (head != null )
+//         {
+//             System.out.print(head.data + " -> ");
+//             head = head.next;
+//         }
+//         System.out.print("NULL");
+//     }
+// }
