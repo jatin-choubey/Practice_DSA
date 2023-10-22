@@ -39,8 +39,8 @@ public:
     int maxPathSum(TreeNode *root)
     {
         // Initialize sum and maxi to be the value of the root node
-        int sum = root->val;
-        int maxi = root->val;
+        int sum = INT_MIN;
+        int maxi = INT_MIN;
 
         // Call the helper function with root, sum and maxi as arguments
         helper(root, sum, maxi);
