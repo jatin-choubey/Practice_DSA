@@ -27,7 +27,7 @@ public:
         int leftVal = root->val + left;   // Calculate the sum of the node value and its left child
         int rightVal = root->val + right; // Calculate the sum of the node value and its right child
 
-        // Suppose the leftVal is 5 and rightVal is 2, we will consider rightVal as maxi.
+        // Suppose the leftVal is 2 and rightVal is 5, we will consider rightVal as maxi.
         // If root leftVal = -1, rightVal = -4, and root is 5, we will simply take just the root.
         // If all three are negative values, we will take '0' as maxi, which means, we are not taking any path in the particular subtree.
         maxi = max(0, (max(root->val, max(leftVal, rightVal))));
