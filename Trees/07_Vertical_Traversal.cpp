@@ -1,6 +1,6 @@
 /* 987. Vertical Order Traversal of a Binary Tree https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/description/
 
-NOTE: Please Visit the code using the Above link for clear understanding of Code.
+NOTE: Please Visit the question using the Above link for clear understanding of Code.
 
 
 Given the root of a binary tree, calculate the vertical order traversal of the binary tree.
