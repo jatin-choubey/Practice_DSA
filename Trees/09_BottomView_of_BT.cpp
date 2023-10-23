@@ -42,7 +42,7 @@ public:
         // Create a queue to perform level-order traversal of the tree.
         queue<pair<int, Node *>> Q;
 
-        // Start with the root node at a horizontal distance of 0.
+        // Start with the root node at a vertical distance of 0.
         Q.push({0, root});
 
         // Initialize the map with the root node at distance 0.
